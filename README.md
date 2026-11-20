@@ -1,1 +1,4 @@
-# hamdanalajmi.github.io
+# الدكتور
+موقع محل الدكتور لقطع غيار الحفارات واللودرات - الشويخ، الكويت.
+
+https://hamdanalajmi.github.io
