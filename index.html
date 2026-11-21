@@ -130,6 +130,8 @@ dialog.pd::backdrop{background:rgba(10,12,14,.7)}
 .pd .act{padding:16px 18px 20px}
 .pd .act .btn{width:100%;justify-content:center}
 .sec-hero{width:100%;height:auto;max-height:520px;object-fit:cover;object-position:center 60%;border-radius:12px;margin-bottom:26px;background:#fff}
+.info{display:block;margin-top:20px;max-width:860px;border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:#fff}
+.info img{width:100%;height:auto;display:block}
 /* brands */
 .brands{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));border-top:1px solid var(--rule);border-inline-start:1px solid var(--rule);margin-top:28px}
 .brands a{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:104px;text-decoration:none;border-bottom:1px solid var(--rule);border-inline-end:1px solid var(--rule);background:#fff;transition:background .2s}
@@ -316,8 +318,8 @@ footer a{color:#C8CED5;text-decoration:none;font-weight:800}
       groups:[{ items:[["الطرمبة الرئيسية"],["مضخة الدوران"],["مضخة التبريد"],["مضخة البايلوت","parts/pilot-pump.jpg"]] }] },
     { id:"har", title:"الهارنيس (الظفاير)", desc:"ظفاير البخاخات، الكمبيوتر، الشاصي، الكبينة ويدة التحكم", w:W.har, icon:"wire",
       groups:[{ items:[["ظفيرة البخاخات"],["ظفيرة الكمبيوتر"],["ظفيرة الشاصي"],["ظفيرة أسفل الكبينة"],["ظفيرة يدة التحكم"]] }] },
-    { id:"ecu", title:"الكمبيوترات", desc:"كمبيوتر المكينة، الجير والحركات", w:W.ecu, icon:"chip", hero:"parts/ecu.jpg",
-      groups:[{ items:[["كمبيوتر المكينة","parts/ecu.jpg"],["كمبيوتر الجير"],["كمبيوتر الحركات"]] }] },
+    { id:"ecu", title:"الكمبيوترات", desc:"كمبيوتر المكينة، الجير والحركات", w:W.ecu, icon:"chip", info:"parts/ecu-system.jpg",
+      groups:[{ items:[["كمبيوتر المكينة"],["كمبيوتر الجير"],["كمبيوتر الحركات"]] }] },
     { id:"pil", title:"يدات تحكم البايلوت", desc:"للحفارات 320 و325 و330", w:W.std, icon:"stick",
       groups:[{ items:[["حفارة 320","","B · C · D"],["حفارة 325","","B · C · D"],["حفارة 330","","B · C · D"]] }] },
     { id:"ldr", title:"اللودر", desc:"لودر 950 و966، موديلات F و G و H", icon:"loader",
@@ -347,6 +349,7 @@ footer a{color:#C8CED5;text-decoration:none;font-weight:800}
     <div class="part-sec" id="sec-${s.id}">
       ${s.hero ? `<img class="sec-hero" src="${s.hero}" alt="" loading="lazy">` : ""}
       <div class="ps-head"><h3>${s.title}</h3>${s.w ? `<span class="w">${s.w}</span>` : ""}</div>
+      ${s.info ? `<a class="info" href="${s.info}" target="_blank" rel="noopener"><img src="${s.info}" alt="" width="2048" height="1152" loading="lazy"></a>` : ""}
       ${(s.chips||[]).map(c => `<div class="label">${c.label}</div><div class="chips">${c.list.map(([en,ar]) =>
         `<a href="${wa((s.id==="jh"?"قطعة جاك همر ":"قطعة لودر ") + (ar||en))}"><b>${en}</b>${ar?`<small>${ar}</small>`:""}</a>`).join("")}</div>`).join("")}
       ${s.groups.map(g => `${g.en ? `<div class="brandhead"><b>${g.en}</b><span>${g.name}</span></div>` : (g.name ? `<div class="label">${g.name}</div>` : "")}
