@@ -357,7 +357,7 @@ footer a{color:#C8CED5;text-decoration:none;font-weight:800}
       ${s.groups.map(g => `${g.en ? `<div class="brandhead"><b>${g.en}</b><span>${g.name}</span></div>` : (g.name ? `<div class="label">${g.name}</div>` : "")}
         ${g.models ? `<div class="chips">${g.models.map(m => `<a href="${wa("قطعة جاك همر " + g.name + " " + m)}"><b>${m}</b></a>`).join("")}</div>` : ""}
         <div class="items">${g.items.map(([n,img,sm]) => `
-        <a class="item" href="${wa(n + (g.en ? " لجاك همر " + g.name : suffix(s.id)))}"${g.en ? ` data-part="${n}" data-brand="${g.name}" data-en="${g.en}"` : ""}>
+        <a class="item" href="${wa(s.id==="pil" ? "جويستك (يدة) " + n : (g.name==="يدات التحكم" ? "جويستك (يدة) لودر " + n : n + (g.en ? " لجاك همر " + g.name : suffix(s.id))))}"${g.en ? ` data-part="${n}" data-brand="${g.name}" data-en="${g.en}"` : ""}>
           ${img ? `<img src="${img}" alt="${n}">` : `<i>${svg(s.icon)}</i>`}
           <span><b>${n}</b>${sm ? `<small>${sm}</small>` : ""}</span>
           <span class="ar" aria-hidden="true">‹</span>
