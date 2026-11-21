@@ -134,6 +134,39 @@ dialog.pd::backdrop{background:rgba(10,12,14,.7)}
 .info img{width:100%;height:auto;display:block}
 .info.sq{max-width:520px}
 .info.full{max-width:none}
+
+/* quick order (part-number lookup, like the big dealers) */
+.hero .grid2{display:grid;gap:32px;align-items:center}
+@media(min-width:960px){.hero .grid2{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}}
+.qo{background:#fff;color:var(--ink);border-radius:14px;padding:22px;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.qo h2{font-size:24px;margin:0}
+.qo p{color:var(--steel);font-size:15px;margin-top:4px}
+.qo form{display:grid;gap:12px;margin-top:16px}
+.qo .row2{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+.qo label{display:grid;gap:5px;font-weight:800;font-size:14px}
+.qo input,.qo select{font:inherit;font-size:16px;font-weight:500;padding:12px 12px;border:1px solid #CDD3D9;border-radius:8px;background:#fff;color:var(--ink);min-height:48px}
+.qo input:focus,.qo select:focus{outline:2px solid var(--signal);outline-offset:1px;border-color:transparent}
+.qo .btn{justify-content:center;width:100%}
+.qo small.hint{color:var(--steel);font-size:13px}
+
+/* catalog search */
+.finder{position:sticky;top:64px;z-index:6;background:var(--mist);padding:14px 0 12px;border-bottom:1px solid var(--rule)}
+.finder label{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #CDD3D9;border-radius:10px;padding:0 14px;max-width:640px}
+.finder svg{width:22px;height:22px;color:var(--steel);flex:none}
+.finder input{flex:1;border:0;font:inherit;font-size:16px;padding:13px 0;background:none;color:var(--ink)}
+.finder input:focus{outline:none}
+.finder label:focus-within{outline:2px solid var(--signal);outline-offset:1px}
+.nores{display:none;margin-top:30px;padding:28px;border:2px dashed #CDD3D9;border-radius:12px;text-align:center;background:#fff}
+.nores b{display:block;font-weight:900;font-size:22px}
+.nores p{color:var(--steel);margin:6px auto 16px;max-width:46ch}
+.part-sec.hide,.item.hide,.chips.hide,.label.hide,.brandhead.hide,.items.hide,.info.hide,.sec-hero.hide{display:none}
+
+/* how to order */
+.steps{display:grid;gap:16px;margin-top:28px;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));counter-reset:st}
+.step{border:1px solid var(--rule);border-radius:10px;padding:22px;background:#fff}
+.step::before{counter-increment:st;content:counter(st);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--ink);color:#fff;font-weight:900;font-size:18px;margin-bottom:12px}
+.step b{display:block;font-weight:900;font-size:19px}
+.step p{color:var(--steel);font-size:15px;margin-top:4px}
 /* brands */
 .brands{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));border-top:1px solid var(--rule);border-inline-start:1px solid var(--rule);margin-top:28px}
 .brands a{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:104px;text-decoration:none;border-bottom:1px solid var(--rule);border-inline-end:1px solid var(--rule);background:#fff;transition:background .2s}
@@ -172,6 +205,13 @@ footer a{color:#C8CED5;text-decoration:none;font-weight:800}
 @media(min-width:860px){.dock{display:none}footer{padding-bottom:26px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cat,.item{transition:none}.cat:hover{transform:none}}
 </style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="الدكتور لقطع غيار المعدات الثقيلة">
+<meta property="og:description" content="هيدروليك، هارنيس، كمبيوترات وجويستك للحفارات واللودرات، وقطع الجاك همر. الشويخ — توصيل لكل الكويت. واتساب 65888222">
+<meta property="og:image" content="https://doctorhydraulic.github.io/parts/main-pump-banner-2.jpg">
+<meta property="og:url" content="https://doctorhydraulic.github.io/">
+<link rel="canonical" href="https://doctorhydraulic.github.io/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoPartsStore","name":"الدكتور لقطع غيار المعدات الثقيلة","url":"https://doctorhydraulic.github.io/","telephone":"+96565888222","image":"https://doctorhydraulic.github.io/logo-sm.png","address":{"@type":"PostalAddress","addressLocality":"الشويخ","addressCountry":"KW"},"hasMap":"https://maps.app.goo.gl/Z3EMKijjHS32cFyWA","areaServed":"الكويت","sameAs":["https://www.instagram.com/excavator.q8","https://www.tiktok.com/@hydraulicpumpdoctor"]}</script>
 </head>
 <body>
 
@@ -214,7 +254,8 @@ footer a{color:#C8CED5;text-decoration:none;font-weight:800}
     </g>
     <rect width="1200" height="520" fill="url(#fadeH)"/>
   </svg>
-  <div class="wrap">
+  <div class="wrap grid2">
+   <div>
     <h1>قطع غيار المعدات الثقيلة</h1>
     <p>هيدروليك، هارنيس، كمبيوترات ويدات تحكم للحفارات واللودرات، وقطع الجاك همر. من الشويخ، لكل الكويت.</p>
     <div class="ctas">
@@ -224,6 +265,29 @@ footer a{color:#C8CED5;text-decoration:none;font-weight:800}
       </a>
       <a class="btn ghost" href="#catalog">تصفح الأقسام</a>
     </div>
+   </div>
+   <div class="qo" id="order">
+    <h2>اطلب بالرقم أو بالموديل</h2>
+    <p>عبّي اللي تعرفه، ونرد عليك على الواتساب بالقطعة المناسبة.</p>
+    <form id="qoForm" novalidate>
+      <div class="row2">
+        <label>المكينة
+          <select id="qoM"><option>حفارة</option><option>لودر</option><option>جاك همر</option><option>مكينة ثانية</option></select>
+        </label>
+        <label>الموديل
+          <input id="qoModel" placeholder="مثلاً 320D" autocomplete="off">
+        </label>
+      </div>
+      <label><span>رقم القطعة <span style="font-weight:500;color:var(--steel)">(إذا تعرفه)</span></span>
+        <input id="qoPN" placeholder="478-7931" inputmode="text" autocomplete="off" dir="ltr">
+      </label>
+      <label>شنو تحتاج؟
+        <input id="qoNeed" placeholder="مثلاً طرمبة بايلوت، ظفيرة البخاخات…" autocomplete="off">
+      </label>
+      <button class="btn primary" type="submit">أرسل الطلب على الواتساب</button>
+      <small class="hint">تقدر بعدها ترسل صورة القطعة بنفس المحادثة.</small>
+    </form>
+   </div>
   </div>
 </section>
 
@@ -245,8 +309,27 @@ footer a{color:#C8CED5;text-decoration:none;font-weight:800}
   </div>
 </section>
 
-<section class="block alt">
-  <div class="wrap" id="sections"></div>
+<section class="block" style="padding-top:0">
+  <div class="wrap">
+    <div class="eyebrow">طريقة الطلب</div>
+    <h2>ثلاث خطوات وقطعتك عندك</h2>
+    <div class="steps">
+      <div class="step"><b>ارسل لنا القطعة</b><p>رقمها أو صورتها، مع موديل المكينة.</p></div>
+      <div class="step"><b>نأكد لك المقاس</b><p>نتأكد إن القطعة تركب على مكينتك قبل لا تشتري.</p></div>
+      <div class="step"><b>توصلك وين ما كنت</b><p>نوصلها لموقعك بالكويت، أو تستلمها من المحل بالشويخ.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block alt" style="padding-top:0">
+  <div class="finder"><div class="wrap">
+    <label><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="find" type="search" placeholder="دوّر على قطعة أو موديل… مثلاً بستم أو 320" aria-label="بحث عن قطعة أو موديل"></label>
+  </div></div>
+  <div class="wrap">
+    <div id="sections"></div>
+    <div class="nores" id="nores"><b>ما لقيناها بالقائمة</b><p>عندنا قطع أكثر من اللي بالموقع. ارسل لنا اسمها أو رقمها ونرد عليك.</p><a class="btn primary" id="noresWa" href="https://wa.me/96565888222">اسألنا على الواتساب</a></div>
+  </div>
 </section>
 
 <section class="block">
@@ -379,6 +462,38 @@ footer a{color:#C8CED5;text-decoration:none;font-weight:800}
   });
   document.getElementById("pdX").addEventListener("click", () => pd.close());
   pd.addEventListener("click", e => { if (e.target === pd) pd.close(); });
+  // quick order → WhatsApp
+  document.getElementById("qoForm").addEventListener("submit", e => {
+    e.preventDefault();
+    const v = id => document.getElementById(id).value.trim();
+    const lines = ["هلا دكتور، أبي قطعة:", "المكينة: " + v("qoM") + (v("qoModel") ? " " + v("qoModel") : "")];
+    if (v("qoPN")) lines.push("رقم القطعة: " + v("qoPN"));
+    if (v("qoNeed")) lines.push("القطعة: " + v("qoNeed"));
+    window.open("https://wa.me/96565888222?text=" + encodeURIComponent(lines.join("\n")), "_blank");
+  });
+  // finder
+  const norm = t => t.replace(/[أإآ]/g,"ا").replace(/ة/g,"ه").replace(/ى/g,"ي").replace(/[\s\-·]+/g,"").toLowerCase();
+  const find = document.getElementById("find"), nores = document.getElementById("nores");
+  find.addEventListener("input", () => {
+    const q = norm(find.value);
+    let any = false;
+    document.querySelectorAll(".part-sec").forEach(sec => {
+      const head = norm(sec.querySelector(".ps-head").textContent);
+      const secHit = q && head.includes(q);
+      let hits = 0;
+      sec.querySelectorAll(".item").forEach(it => {
+        const ok = !q || secHit || norm(it.textContent + " " + (it.dataset.brand||"")).includes(q);
+        it.classList.toggle("hide", !ok); if (ok) hits++;
+      });
+      sec.querySelectorAll(".chips a").forEach(c => { if (q && norm(c.textContent).includes(q)) hits++; });
+      sec.querySelectorAll(".items").forEach(g => g.classList.toggle("hide", q && !secHit && !g.querySelector(".item:not(.hide)")));
+      sec.querySelectorAll(".info,.sec-hero").forEach(x => x.classList.toggle("hide", !!q && !secHit));
+      const show = !q || hits > 0;
+      sec.classList.toggle("hide", !show); if (show) any = true;
+    });
+    nores.style.display = any ? "none" : "block";
+    document.getElementById("noresWa").href = "https://wa.me/96565888222?text=" + encodeURIComponent("هلا دكتور، أبي " + find.value.trim());
+  });
 }
 </script>
 </body>
