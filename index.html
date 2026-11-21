@@ -316,8 +316,8 @@ footer a{color:#C8CED5;text-decoration:none;font-weight:800}
       groups:[{ items:[["الطرمبة الرئيسية"],["مضخة الدوران"],["مضخة التبريد"],["مضخة البايلوت","parts/pilot-pump.jpg"]] }] },
     { id:"har", title:"الهارنيس (الظفاير)", desc:"ظفاير البخاخات، الكمبيوتر، الشاصي، الكبينة ويدة التحكم", w:W.har, icon:"wire",
       groups:[{ items:[["ظفيرة البخاخات"],["ظفيرة الكمبيوتر"],["ظفيرة الشاصي"],["ظفيرة أسفل الكبينة"],["ظفيرة يدة التحكم"]] }] },
-    { id:"ecu", title:"الكمبيوترات", desc:"كمبيوتر المكينة، الجير والحركات", w:W.ecu, icon:"chip",
-      groups:[{ items:[["كمبيوتر المكينة"],["كمبيوتر الجير"],["كمبيوتر الحركات"]] }] },
+    { id:"ecu", title:"الكمبيوترات", desc:"كمبيوتر المكينة، الجير والحركات", w:W.ecu, icon:"chip", hero:"parts/ecu.jpg",
+      groups:[{ items:[["كمبيوتر المكينة","parts/ecu.jpg"],["كمبيوتر الجير"],["كمبيوتر الحركات"]] }] },
     { id:"pil", title:"يدات تحكم البايلوت", desc:"للحفارات 320 و325 و330", w:W.std, icon:"stick",
       groups:[{ items:[["حفارة 320","","B · C · D"],["حفارة 325","","B · C · D"],["حفارة 330","","B · C · D"]] }] },
     { id:"ldr", title:"اللودر", desc:"لودر 950 و966، موديلات F و G و H", icon:"loader",
@@ -345,7 +345,7 @@ footer a{color:#C8CED5;text-decoration:none;font-weight:800}
 
   document.getElementById("sections").innerHTML = SECTIONS.map(s => `
     <div class="part-sec" id="sec-${s.id}">
-      ${s.hero ? `<img class="sec-hero" src="${s.hero}" alt="" width="1082" height="1000" loading="lazy">` : ""}
+      ${s.hero ? `<img class="sec-hero" src="${s.hero}" alt="" loading="lazy">` : ""}
       <div class="ps-head"><h3>${s.title}</h3>${s.w ? `<span class="w">${s.w}</span>` : ""}</div>
       ${(s.chips||[]).map(c => `<div class="label">${c.label}</div><div class="chips">${c.list.map(([en,ar]) =>
         `<a href="${wa((s.id==="jh"?"قطعة جاك همر ":"قطعة لودر ") + (ar||en))}"><b>${en}</b>${ar?`<small>${ar}</small>`:""}</a>`).join("")}</div>`).join("")}
