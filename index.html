@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>الدكتور | قطع غيار الحفارات واللودرات - الشويخ، الكويت</title>
-<meta name="description" content="الدكتور في الشويخ: مضخات هيدروليك، كمبيوترات حفارات، وايرات وقطع غيار للحفارات واللودرات. ضمان على القطع. للطلب واتساب 65888222.">
+<meta name="description" content="الدكتور في الشويخ: مضخات هيدروليك، كمبيوترات حفارات، وايرات وقطع غيار للحفارات واللودرات. توصيل لكل الكويت. للطلب واتساب 65888222.">
 <meta property="og:title" content="الدكتور | قطع غيار الحفارات واللودرات">
 <meta property="og:description" content="مضخات هيدروليك • كمبيوترات • وايرات — الشويخ، الكويت. واتساب 65888222">
 <meta property="og:image" content="poster.jpg">
@@ -149,7 +149,7 @@ footer img{width:90px;margin:0 auto 10px}
         <article class="part">
           <h3>مضخات هيدروليك</h3>
           <p>المضخة الرئيسية للحفارة، قلب الهيدروليك كله.</p>
-          <div class="tag"><b>٤</b>شهور ضمان</div>
+          <div class="tag"><b>مع</b>الضمان</div>
         </article>
         <article class="part">
           <h3>كمبيوترات حفارات</h3>
@@ -164,7 +164,7 @@ footer img{width:90px;margin:0 auto 10px}
         <article class="part">
           <h3>قطع غيار هيدروليك</h3>
           <p>قطع المضخة والأجزاء الداخلية وغيرها، قول لنا موديل حفارتك ونجيب لك القطعة.</p>
-          <div class="tag"><b>٤</b>شهور ضمان</div>
+          <div class="tag"><b>مع</b>الضمان</div>
         </article>
       </div>
     </div>
@@ -184,7 +184,7 @@ footer img{width:90px;margin:0 auto 10px}
       <h2 id="w">الضمان مكتوب، مو كلام</h2>
       <p class="sub">إذا القطعة خربت بفترة الضمان، نبدلها لك.</p>
       <div class="wtable" role="table" aria-label="جدول الضمان">
-        <div class="wrow" role="row"><div role="cell">قطع الغيار</div><div role="cell">٤ شهور<small>ضمان</small></div></div>
+        <div class="wrow" role="row"><div role="cell">قطع الغيار</div><div role="cell">مع الضمان</div></div>
         <div class="wrow" role="row"><div role="cell">الوايرات</div><div role="cell">سنة كاملة<small>استبدال</small></div></div>
         <div class="wrow" role="row"><div role="cell">كمبيوترات الحفارات</div><div role="cell">٣ شهور<small>استبدال</small></div></div>
       </div>
@@ -233,7 +233,7 @@ footer img{width:90px;margin:0 auto 10px}
 </footer>
 
 <div class="dock">
-  <div class="who">الدكتور<small>توصيل لكل الكويت • ضمان على القطع</small></div>
+  <div class="who">الدكتور<small>توصيل لكل الكويت • مع الضمان</small></div>
   <a class="btn" href="https://wa.me/96565888222">اطلب واتساب</a>
 </div>
 
@@ -242,7 +242,7 @@ footer img{width:90px;margin:0 auto 10px}
 {
   // ===== أضف قطعة جديدة هني: سطر واحد لكل قطعة =====
   const PARTS = [
-    { name: "طرمبة بايلوت", img: "parts/pilot-pump.jpg", note: "طرمبة البايلوت للحفارات. قول لنا موديل حفارتك ونأكد لك المقاس.", warranty: "٤ شهور ضمان" },
+    { name: "طرمبة بايلوت", img: "parts/pilot-pump.jpg", note: "طرمبة البايلوت للحفارات. قول لنا موديل حفارتك ونأكد لك المقاس.", warranty: "مع الضمان" },
   ];
   // =================================================
   const wa = (n) => "https://wa.me/96565888222?text=" + encodeURIComponent("هلا دكتور، أبي " + n);
@@ -253,7 +253,7 @@ footer img{width:90px;margin:0 auto 10px}
       <div class="body">
         <h3>${p.name}</h3>
         <p>${p.note}</p>
-        <div class="meta"><span class="chip">${p.warranty}</span><span class="chip">توصيل لكل الكويت</span></div>
+        <div class="meta">${p.warranty ? `<span class="chip">${p.warranty}</span>` : ""}<span class="chip">توصيل لكل الكويت</span></div>
         <a class="btn" href="${wa(p.name)}">اطلبها واتساب</a>
       </div>
     </article>`).join("");
