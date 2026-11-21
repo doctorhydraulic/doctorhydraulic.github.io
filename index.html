@@ -3,260 +3,323 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>الدكتور | قطع غيار الحفارات واللودرات - الشويخ، الكويت</title>
-<meta name="description" content="الدكتور في الشويخ: مضخات هيدروليك، كمبيوترات حفارات، وايرات وقطع غيار للحفارات واللودرات. توصيل لكل الكويت. للطلب واتساب 65888222.">
-<meta property="og:title" content="الدكتور | قطع غيار الحفارات واللودرات">
-<meta property="og:description" content="مضخات هيدروليك • كمبيوترات • وايرات — الشويخ، الكويت. واتساب 65888222">
+<title>الدكتور | متجر قطع غيار الحفارات واللودرات - الشويخ، الكويت</title>
+<meta name="description" content="متجر الدكتور: مضخات هيدروليك، طرمبات بايلوت، كمبيوترات حفارات، وايرات وقطع غيار للحفارات واللودرات. الشويخ - توصيل لكل الكويت. واتساب 65888222.">
+<meta property="og:title" content="الدكتور | متجر قطع غيار الحفارات">
+<meta property="og:description" content="مضخات هيدروليك • بايلوت • كمبيوترات • وايرات — الشويخ، توصيل لكل الكويت. واتساب 65888222">
 <meta property="og:image" content="poster.jpg">
 <link rel="icon" href="icon.png">
-<meta name="theme-color" content="#14181C">
+<meta name="theme-color" content="#16191C">
 <style>
+/*
+VOICE  : a working parts counter in Shuwaikh — catalog first, no fluff
+IDEA   : the store page of a hydraulic parts dealer (blueprint banner, category rail, brand board)
+PICTURE: engineering line drawing of a twin piston pump across the banner
+COLOUR : workshop black header, concrete-grey store floor, machine-orange accent
+TYPE   : Tajawal throughout (the shop's own font), 900 for headings
+*/
 @font-face{font-family:"Tajawal";src:url(fonts/Tajawal-Medium.ttf) format("truetype");font-weight:500;font-display:swap}
 @font-face{font-family:"Tajawal";src:url(fonts/Tajawal-ExtraBold.ttf) format("truetype");font-weight:800;font-display:swap}
 @font-face{font-family:"Tajawal";src:url(fonts/Tajawal-Black.ttf) format("truetype");font-weight:900;font-display:swap}
-:root{
-  --graphite:#14181C;   /* hydraulic-oil dark */
-  --steel:#232A31;      /* machine body */
-  --rule:#3A434C;
-  --mute:#9AA4AD;       /* worn steel */
-  --paint:#F26B1D;      /* machine paint orange */
-  --heat:#D9361C;       /* logo red */
-  --concrete:#ECE8E2;   /* workshop floor */
-  --ink:#1A1D20;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:"Tajawal",system-ui,sans-serif;font-weight:500;background:var(--graphite);color:#F3F1EE;line-height:1.7;font-size:18px;-webkit-font-smoothing:antialiased}
+:root{--black:#16191C;--bar:#22272C;--line:#3A4249;--floor:#E6E4E0;--panel:#FFFFFF;--ink:#1D2125;--mute:#5E666D;--paint:#F26B1D;--heat:#D9361C}
+*{box-sizing:border-box;margin:0;padding:0;min-width:0}
+body{font-family:"Tajawal",system-ui,sans-serif;font-weight:500;background:var(--floor);color:var(--ink);line-height:1.6;font-size:17px;overflow-x:clip}
 a{color:inherit}
-img,video{max-width:100%;display:block}
-:focus-visible{outline:3px solid var(--paint);outline-offset:3px;border-radius:6px}
-.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+img{max-width:100%;display:block}
+:focus-visible{outline:3px solid var(--paint);outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 16px}
 
-/* ---------- header ---------- */
-header{display:flex;align-items:center;justify-content:space-between;padding:14px 22px;max-width:1080px;margin:0 auto}
-header img{width:92px;height:92px}
-.hdr-call{font-weight:800;text-decoration:none;font-size:17px;padding:10px 18px;border:2px solid var(--rule);border-radius:40px;direction:ltr}
+/* top strip */
+.strip{background:var(--black);color:#C9CED2;font-size:15px;border-bottom:1px solid var(--line)}
+.strip .wrap{display:flex;gap:12px;align-items:center;justify-content:space-between;padding-block:8px;flex-wrap:wrap}
+.strip b{color:#fff}
+.search{display:flex;align-items:center;background:#2B3136;border:1px solid var(--line);border-radius:8px;flex:1 1 260px;max-width:420px}
+.search input{flex:1;background:none;border:0;color:#fff;font:inherit;font-size:16px;padding:9px 12px}
+.search input::placeholder{color:#8E979E}
+.search svg{width:20px;height:20px;margin-inline:10px;color:#AEB6BC;flex:none}
 
-/* ---------- hero ---------- */
-.hero{position:relative;padding:34px 0 0;overflow:hidden}
-.hero h1{font-weight:900;font-size:clamp(46px,11vw,104px);line-height:1.05;letter-spacing:0}
-.hero h1 .l2{display:block;color:var(--paint)}
-.hero p.lead{margin-top:18px;font-size:clamp(19px,4.6vw,24px);color:#D5D9DD;max-width:30ch}
-.pulse{display:block;width:100%;height:120px;margin:26px 0 8px}
-.pulse path{fill:none;stroke:var(--paint);stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 2.2s .3s cubic-bezier(.6,.05,.25,1) forwards}
-.pulse .base{stroke:var(--rule);stroke-width:2;stroke-dasharray:none;stroke-dashoffset:0;animation:none}
-@keyframes draw{to{stroke-dashoffset:0}}
-.cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:8px;padding-bottom:46px}
-.btn{display:inline-flex;align-items:center;gap:12px;font-family:inherit;font-weight:800;font-size:21px;text-decoration:none;background:var(--paint);color:#fff;padding:16px 28px;border-radius:14px;box-shadow:0 10px 0 -4px var(--heat)}
-.btn:active{transform:translateY(3px);box-shadow:0 6px 0 -4px var(--heat)}
-.btn svg{width:26px;height:26px;flex:none}
-.btn-ghost{font-weight:800;text-decoration:none;color:var(--mute);border-bottom:2px solid var(--rule);padding-bottom:2px}
+/* banner */
+.banner{position:relative;background:#0F1214;overflow:hidden;border-bottom:3px solid var(--paint)}
+.banner svg.bp{position:absolute;inset:0;width:100%;height:100%;opacity:.55}
+.banner .wrap{position:relative;display:flex;align-items:center;gap:18px;min-height:210px;padding-block:22px}
+.banner img{width:132px;height:132px;flex:none;filter:drop-shadow(0 6px 18px rgba(0,0,0,.7))}
+.banner h1{font-weight:900;color:#fff;font-size:clamp(38px,8vw,64px);line-height:1.05;text-shadow:0 3px 0 #000}
+.banner p{color:#E5C8B4;font-weight:800;font-size:clamp(16px,3.6vw,21px);margin-top:6px}
 
-/* ---------- parts ---------- */
-section{padding:64px 0}
-h2{font-weight:900;font-size:clamp(32px,7vw,52px);line-height:1.15}
-.sub{color:var(--mute);margin-top:8px;max-width:40ch}
-.parts{margin-top:30px;border-top:2px solid var(--rule)}
-.part{display:grid;grid-template-columns:1fr auto;gap:6px 18px;align-items:center;padding:24px 0;border-bottom:1px solid var(--rule)}
-.part h3{font-weight:800;font-size:clamp(24px,5.4vw,32px);line-height:1.25}
-.part p{grid-column:1/2;color:#C3C9CF;font-size:17px}
-.tag{grid-row:1/3;grid-column:2;align-self:center;text-align:center;width:112px;padding:10px 8px;border:2px solid var(--paint);border-radius:12px;color:var(--paint);font-weight:800;font-size:15px;line-height:1.3}
-.tag b{display:block;font-weight:900;font-size:26px;color:#fff}
+/* nav */
+nav.menu{background:var(--bar);border-bottom:1px solid #000;position:sticky;top:0;z-index:5}
+nav.menu .wrap{display:flex;overflow-x:auto;scrollbar-width:none}
+nav.menu a{flex:none;display:block;color:#E8EAEC;text-decoration:none;font-weight:800;font-size:17px;padding:14px 18px;border-inline-start:1px solid #33393F}
+nav.menu a:first-child{border:0}
+nav.menu a:hover,nav.menu a.on{background:var(--paint);color:#fff}
 
+/* store body */
+.store{display:grid;gap:18px;padding-block:18px}
+@media(min-width:900px){.store{grid-template-columns:270px minmax(0,1fr)}}
+.box{background:var(--panel);border:1px solid #CFCCC7;border-radius:6px}
+.box h2{font-weight:900;font-size:22px;padding:14px 16px;border-bottom:1px solid #DDD9D4;background:linear-gradient(#FAFAF9,#EFEDEA)}
 
-/* ---------- catalog ---------- */
-.catalog{background:var(--steel)}
-.cat-grid{margin-top:28px;display:grid;gap:22px;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
-.item{background:var(--graphite);border:1px solid var(--rule);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
-.item img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;background:#ddd}
-.item .body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
-.item h3{font-weight:900;font-size:28px;line-height:1.2}
-.item p{color:#C3C9CF;font-size:16px}
-.item .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
-.item .chip{font-size:15px;font-weight:800;padding:4px 12px;border-radius:30px;border:1.5px solid var(--paint);color:var(--paint)}
-.item .btn{margin-top:auto;justify-content:center;font-size:19px;padding:14px 18px}
-/* ---------- warranty band ---------- */
-.band{background:var(--concrete);color:var(--ink);position:relative}
-.band::before{content:"";position:absolute;inset:0 0 auto 0;height:14px;background:repeating-linear-gradient(-45deg,var(--paint) 0 18px,var(--ink) 18px 36px)}
-.band .wrap{padding-top:14px}
-.band .sub{color:#5B636B}
-.wtable{margin-top:30px;display:grid;gap:0;border:3px solid var(--ink);border-radius:18px;overflow:hidden;background:#fff}
-.wrow{display:grid;grid-template-columns:1fr 1.1fr;align-items:center;border-bottom:2px solid var(--ink)}
-.wrow:last-child{border-bottom:0}
-.wrow div{padding:20px 18px;font-size:20px;font-weight:800}
-.wrow div+div{border-right:2px solid var(--ink);background:var(--ink);color:#fff;font-size:22px}
-.wrow small{display:block;font-weight:500;font-size:15px;color:#B9C0C6}
-.promise{margin-top:22px;font-size:19px;max-width:44ch}
+/* categories rail */
+.cats ul{list-style:none}
+.cats li+li{border-top:1px solid #E6E3DF}
+.cats li{flex:none}
+.cats button{all:unset;box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;width:100%;padding:13px 16px;cursor:pointer;font-weight:800;font-size:17px}
+.cats button span{color:var(--mute);font-weight:500;font-size:14px}
+.cats button:hover{background:#F6F3F0}
+.cats button[aria-pressed=true]{background:var(--paint);color:#fff}
+.cats button[aria-pressed=true] span{color:#FFE3D2}
+@media(max-width:899px){
+  .cats h2{display:none}
+  .cats ul{display:flex;overflow-x:auto;gap:8px;padding:10px;scrollbar-width:none}
+  .cats li+li{border:0}
+  .cats button{width:auto;white-space:nowrap;border:1px solid #CFCCC7;border-radius:40px;padding:9px 16px;gap:8px;font-size:16px}
+}
 
-/* ---------- reel ---------- */
-.reel{display:grid;gap:30px;align-items:center}
-.reel video{width:min(330px,82vw);aspect-ratio:9/16;border-radius:26px;border:6px solid var(--steel);background:#000;margin:0 auto}
-@media(min-width:820px){.reel{grid-template-columns:1fr auto}}
+/* welcome */
+.welcome{padding:20px 20px 22px}
+.welcome h2{all:unset;display:block;font-weight:900;font-size:clamp(26px,5vw,36px);line-height:1.2}
+.welcome p{margin-top:10px;max-width:68ch;color:#30363B}
+.welcome .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:inherit;font-weight:800;font-size:18px;text-decoration:none;background:var(--paint);color:#fff;padding:12px 20px;border-radius:8px;border-bottom:4px solid var(--heat)}
+.btn svg{width:22px;height:22px;flex:none}
+.btn.dark{background:var(--black);border-color:#000}
 
-/* ---------- visit ---------- */
-.visit{background:var(--steel)}
-.facts{margin-top:26px;display:grid;gap:14px}
-.fact{display:flex;gap:16px;align-items:center;font-size:20px;font-weight:800;text-decoration:none;padding:18px 20px;background:var(--graphite);border-radius:16px;border:1px solid var(--rule)}
-.fact svg{width:30px;height:30px;flex:none;color:var(--paint)}
-.fact span small{display:block;font-weight:500;font-size:15px;color:var(--mute)}
+/* product grid */
+.products{margin-top:18px}
+.products .head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:14px 16px;border-bottom:1px solid #DDD9D4;background:linear-gradient(#FAFAF9,#EFEDEA)}
+.products .head h2{all:unset;font-weight:900;font-size:22px}
+.products .head span{color:var(--mute);font-size:15px}
+.grid{display:grid;gap:14px;padding:14px;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr))}
+.item{border:1px solid #DDD9D4;border-radius:6px;display:flex;flex-direction:column;background:#fff}
+.item img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-bottom:1px solid #E6E3DF;background:#EEE}
+.item .b{padding:12px 14px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.item h3{font-weight:900;font-size:21px;line-height:1.25}
+.item p{font-size:15px;color:var(--mute)}
+.item .w{font-weight:800;font-size:15px;color:var(--heat)}
+.item .btn{margin-top:auto;font-size:16px;padding:10px 12px}
+.ask{grid-column:1/-1;text-align:center;padding:28px 16px;border:2px dashed #CFCCC7;border-radius:6px}
+.ask h3{font-weight:900;font-size:22px}
+.ask p{color:var(--mute);margin:6px auto 14px;max-width:44ch}
+
+/* brands */
+.brands{margin-top:18px}
+.bgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:0}
+.bgrid a{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:96px;text-decoration:none;border-inline-start:1px solid #E6E3DF;border-bottom:1px solid #E6E3DF;padding:10px}
+.bgrid a b{font-weight:900;font-size:22px;letter-spacing:.5px;direction:ltr}
+.bgrid a small{color:var(--mute);font-size:14px}
+.bgrid a:hover{background:#FFF4EC}
+
+/* warranty + contact */
+.duo{display:grid;gap:18px;margin-top:18px}
+@media(min-width:760px){.duo{grid-template-columns:1fr 1fr}}
+.wt{width:100%;border-collapse:collapse;font-size:17px}
+.wt td{padding:13px 16px;border-bottom:1px solid #E6E3DF}
+.wt td:last-child{font-weight:900;text-align:left;white-space:nowrap}
+.wt tr:last-child td{border:0}
+.contact a{display:flex;gap:14px;align-items:center;padding:14px 16px;text-decoration:none;border-bottom:1px solid #E6E3DF;font-weight:800}
+.contact a:last-child{border:0}
+.contact svg{width:26px;height:26px;color:var(--paint);flex:none}
+.contact small{display:block;font-weight:500;color:var(--mute);font-size:14px}
 .ltr{direction:ltr;unicode-bidi:isolate}
-@media(min-width:820px){.facts{grid-template-columns:1fr 1fr}}
 
-footer{padding:36px 0 120px;color:var(--mute);font-size:15px;text-align:center}
-footer img{width:90px;margin:0 auto 10px}
+footer{background:var(--black);color:#9AA3AA;margin-top:22px;padding:22px 0 100px;font-size:15px}
+footer .wrap{display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+footer img{width:64px}
+footer a{color:#fff;text-decoration:none;font-weight:800}
 
-/* ---------- sticky order bar (mobile) ---------- */
-.dock{position:fixed;inset:auto 12px 12px 12px;z-index:9;display:flex;align-items:center;justify-content:space-between;gap:10px;background:rgba(20,24,28,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--rule);border-radius:18px;padding:10px 10px 10px 16px}
-.dock .who{font-weight:800;font-size:16px;line-height:1.3}
-.dock .who small{display:block;font-weight:500;color:var(--mute);font-size:13px}
-.dock .btn{font-size:18px;padding:12px 18px;box-shadow:none}
-@media(min-width:820px){.dock{display:none}footer{padding-bottom:40px}}
-
-@media (prefers-reduced-motion:reduce){.pulse path{animation:none;stroke-dashoffset:0}html{scroll-behavior:auto}}
+.dock{position:fixed;inset:auto 10px 10px 10px;z-index:9;display:flex;gap:8px}
+.dock .btn{flex:1;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+@media(min-width:900px){.dock{display:none}footer{padding-bottom:22px}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 
-<header>
-  <img src="logo-sm.png" alt="شعار الدكتور">
-  <a class="hdr-call" href="tel:+96565888222">6588 8222</a>
+<div class="strip">
+  <div class="wrap">
+    <div>أهلاً فيك بمتجر <b>الدكتور</b> — طلبك على الواتساب <b class="ltr">6588 8222</b></div>
+    <label class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="دوّر على قطعة… مثلاً بايلوت" aria-label="بحث عن قطعة">
+    </label>
+  </div>
+</div>
+
+<header class="banner">
+  <svg class="bp" viewBox="0 0 1240 210" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <pattern id="bpgrid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#2A3238" stroke-width="1"/></pattern>
+      <g id="pump" fill="none" stroke="#C9A27F" stroke-width="1.6">
+        <rect x="0" y="40" width="230" height="110" rx="6"/>
+        <rect x="230" y="55" width="110" height="80" rx="4"/>
+        <rect x="-50" y="70" width="50" height="50"/>
+        <path d="M-90 88h40v14h-40z"/>
+        <circle cx="60" cy="95" r="38"/><circle cx="60" cy="95" r="24"/><circle cx="60" cy="95" r="6"/>
+        <circle cx="170" cy="95" r="38"/><circle cx="170" cy="95" r="24"/><circle cx="170" cy="95" r="6"/>
+        <path d="M60 57v-25M170 57v-25M40 32h40M150 32h40"/>
+        <circle cx="285" cy="95" r="26"/><circle cx="285" cy="95" r="12"/>
+        <path d="M10 150v20h210v-20M340 75h30v40h-30"/>
+        <path d="M0 40l-10-10M230 40l10-10" stroke-dasharray="4 4"/>
+        <circle cx="20" cy="55" r="4"/><circle cx="210" cy="55" r="4"/><circle cx="20" cy="135" r="4"/><circle cx="210" cy="135" r="4"/>
+      </g>
+      <g id="gear" fill="none" stroke="#C9A27F" stroke-width="1.6">
+        <circle r="54"/><circle r="40"/><circle r="12"/>
+        <path d="M0-54v-12M0 54v12M-54 0h-12M54 0h12M38-38l8-8M-38 38l-8 8M38 38l8 8M-38-38l-8-8"/>
+      </g>
+    </defs>
+    <rect width="1240" height="210" fill="url(#bpgrid)"/>
+    <use href="#pump" x="120" y="10"/>
+    <use href="#gear" x="640" y="105"/>
+    <use href="#pump" x="830" y="10" transform="scale(1) "/>
+    <path d="M500 40h90M500 170h90M520 40v130" stroke="#C9A27F" stroke-width="1" stroke-dasharray="6 5" fill="none"/>
+    <rect width="1240" height="210" fill="url(#fade)"/>
+    <linearGradient id="fade" x1="0" x2="1"><stop offset="0" stop-color="#0F1214" stop-opacity=".2"/><stop offset=".55" stop-color="#0F1214" stop-opacity=".1"/><stop offset="1" stop-color="#0F1214" stop-opacity=".85"/></linearGradient>
+  </svg>
+  <div class="wrap">
+    <img src="logo-sm.png" alt="شعار الدكتور">
+    <div>
+      <h1>الدكتور</h1>
+      <p>متجر قطع غيار الحفارات واللودرات — الشويخ، الكويت</p>
+    </div>
+  </div>
 </header>
 
-<main>
-  <section class="hero" aria-labelledby="t">
-    <div class="wrap">
-      <h1 id="t">حفارتك تعبانة؟<span class="l2">الدكتور عنده القطعة.</span></h1>
-      <p class="lead">مضخات هيدروليك، كمبيوترات، وايرات وقطع غيار للحفارات واللودرات. بالشويخ، ومع كل قطعة ضمان. ونوصّل لكل الكويت.</p>
-      <svg class="pulse" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true">
-        <path class="base" d="M0 70 H1000"/>
-        <path d="M1000 70 H640 L610 70 L590 20 L565 112 L540 6 L515 98 L495 70 H360 L345 52 L330 70 H0"/>
-      </svg>
-      <div class="cta-row">
-        <a class="btn" href="https://wa.me/96565888222?text=%D9%87%D9%84%D8%A7%20%D8%AF%D9%83%D8%AA%D9%88%D8%B1%D8%8C%20%D8%A3%D8%A8%D9%8A%20%D9%82%D8%B7%D8%B9%D8%A9%20%D8%AD%D9%82%20%D8%AD%D9%81%D8%A7%D8%B1%D8%A9">
+<nav class="menu" aria-label="الأقسام">
+  <div class="wrap">
+    <a href="#top" class="on">الرئيسية</a>
+    <a href="#products">كتالوج القطع</a>
+    <a href="#brands">الماركات</a>
+    <a href="#warranty">الضمان</a>
+    <a href="#contact">التوصيل والتواصل</a>
+  </div>
+</nav>
+
+<main class="wrap store" id="top">
+  <aside class="box cats" aria-label="التصنيفات">
+    <h2>التصنيفات</h2>
+    <ul id="cats"></ul>
+  </aside>
+
+  <div>
+    <section class="box welcome">
+      <h2>أهلاً فيك بمتجر الدكتور لقطع الهيدروليك</h2>
+      <p>نوفر مضخات هيدروليك، طرمبات بايلوت، كمبيوترات حفارات، وايرات وقطع داخلية للمضخات، لأشهر الحفارات واللودرات بالسوق. كل قطعة نفحصها قبل لا تطلع من المحل، ومعها الضمان.</p>
+      <p>ما لقيت قطعتك بالكتالوج؟ ارسل لنا صورتها أو رقمها أو موديل حفارتك على الواتساب، ونحددها لك.</p>
+      <div class="row">
+        <a class="btn" href="https://wa.me/96565888222?text=%D9%87%D9%84%D8%A7%20%D8%AF%D9%83%D8%AA%D9%88%D8%B1%D8%8C%20%D8%A3%D8%A8%D9%8A%20%D9%82%D8%B7%D8%B9%D8%A9">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5 0a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.4-.3Z"/></svg>
           اطلب على الواتساب
         </a>
-        <a class="btn-ghost" href="#warranty">شوف الضمان</a>
+        <a class="btn dark" href="#products">تصفح الكتالوج</a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="parts" aria-labelledby="p">
-    <div class="wrap">
-      <h2 id="p">شنو عندنا</h2>
-      <p class="sub">قطع للحفارات واللودرات، نفحصها قبل لا تطلع من المحل.</p>
-      <div class="parts">
-        <article class="part">
-          <h3>مضخات هيدروليك</h3>
-          <p>المضخة الرئيسية للحفارة، قلب الهيدروليك كله.</p>
-          <div class="tag"><b>مع</b>الضمان</div>
-        </article>
-        <article class="part">
-          <h3>كمبيوترات حفارات</h3>
-          <p>وحدة التحكم اللي تدير المكينة والهيدروليك.</p>
-          <div class="tag"><b>٣</b>شهور استبدال</div>
-        </article>
-        <article class="part">
-          <h3>وايرات (ظفاير)</h3>
-          <p>ضد الحرارة، مقاومة للهب، ضد الزيوت والشحم، أسلاك نحاس ألمانية.</p>
-          <div class="tag"><b>سنة</b>استبدال</div>
-        </article>
-        <article class="part">
-          <h3>قطع غيار هيدروليك</h3>
-          <p>قطع المضخة والأجزاء الداخلية وغيرها، قول لنا موديل حفارتك ونجيب لك القطعة.</p>
-          <div class="tag"><b>مع</b>الضمان</div>
-        </article>
-      </div>
-    </div>
-  </section>
+    <section class="box products" id="products" aria-labelledby="ph">
+      <div class="head"><h2 id="ph">كتالوج القطع</h2><span id="count"></span></div>
+      <div class="grid" id="grid"></div>
+    </section>
 
+    <section class="box brands" id="brands" aria-labelledby="bh">
+      <h2 id="bh">قطع لحفارات ولودرات</h2>
+      <div class="bgrid" id="bgrid"></div>
+    </section>
 
-  <section id="catalog" class="catalog" aria-labelledby="c">
-    <div class="wrap">
-      <h2 id="c">كتالوج القطع</h2>
-      <p class="sub">صور حقيقية من المحل. شفت قطعتك؟ اطلبها على الواتساب بضغطة.</p>
-      <div class="cat-grid" id="catGrid"></div>
-    </div>
-  </section>
-
-  <section id="warranty" class="band" aria-labelledby="w">
-    <div class="wrap">
-      <h2 id="w">الضمان مكتوب، مو كلام</h2>
-      <p class="sub">إذا القطعة خربت بفترة الضمان، نبدلها لك.</p>
-      <div class="wtable" role="table" aria-label="جدول الضمان">
-        <div class="wrow" role="row"><div role="cell">قطع الغيار</div><div role="cell">مع الضمان</div></div>
-        <div class="wrow" role="row"><div role="cell">الوايرات</div><div role="cell">سنة كاملة<small>استبدال</small></div></div>
-        <div class="wrow" role="row"><div role="cell">كمبيوترات الحفارات</div><div role="cell">٣ شهور<small>استبدال</small></div></div>
-      </div>
-      <p class="promise">من عشر سنين وإحنا نشتغل بقطع الحفارات، ونقول للزبون الصدق عن كل قطعة قبل لا يشتريها.</p>
-    </div>
-  </section>
-
-  <section aria-labelledby="v">
-    <div class="wrap reel">
-      <div>
-        <h2 id="v">شوفنا على السوشل</h2>
-        <p class="sub">ننزل فيديوهات القطع والشغل كل يوم.</p>
-        <div class="cta-row" style="padding-bottom:0;margin-top:20px">
-          <a class="btn-ghost" href="https://www.tiktok.com/@hydraulicpumpdoctor">تيك توك</a>
-          <a class="btn-ghost" href="https://www.instagram.com/excavator.q8">إنستغرام</a>
-        </div>
-      </div>
-      <video src="reel.mp4" poster="poster.jpg" controls playsinline preload="none" aria-label="فيديو تعريفي عن محل الدكتور"></video>
-    </div>
-  </section>
-
-  <section class="visit" aria-labelledby="loc">
-    <div class="wrap">
-      <h2 id="loc">تعال المحل أو نوصّل لك</h2>
-      <div class="facts">
-        <a class="fact" href="https://www.google.com/maps/search/?api=1&query=%D8%A7%D9%84%D8%B4%D9%88%D9%8A%D8%AE+%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s7-6.3 7-12a7 7 0 1 0-14 0c0 5.7 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg>
-          <span>الشويخ، الكويت<small>افتح الخريطة</small></span>
-        </a>
-        <a class="fact" href="https://wa.me/96565888222">
+    <div class="duo">
+      <section class="box" id="warranty" aria-labelledby="wh">
+        <h2 id="wh">الضمان</h2>
+        <table class="wt">
+          <tr><td>قطع الغيار والمضخات</td><td>مع الضمان</td></tr>
+          <tr><td>الوايرات (ظفاير)</td><td>سنة استبدال</td></tr>
+          <tr><td>كمبيوترات الحفارات</td><td>٣ شهور استبدال</td></tr>
+        </table>
+      </section>
+      <section class="box contact" id="contact" aria-labelledby="ch">
+        <h2 id="ch">التوصيل والتواصل</h2>
+        <a href="https://wa.me/96565888222">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.4 7.9L3 21l1.1-4.5A9 9 0 1 1 21 12Z"/></svg>
-          <span><span class="ltr">6588 8222</span><small>واتساب واتصال</small></span>
+          <span>واتساب واتصال: <span class="ltr">6588 8222</span><small>نرد عليك ونحدد القطعة</small></span>
         </a>
-        <a class="fact" href="https://wa.me/96565888222?text=%D8%A3%D8%A8%D9%8A%20%D8%AA%D9%88%D8%B5%D9%8A%D9%84">
+        <a href="https://wa.me/96565888222?text=%D8%A3%D8%A8%D9%8A%20%D8%AA%D9%88%D8%B5%D9%8A%D9%84">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 6h11v9H2zM13 9h4l4 4v2h-8z"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>
           <span>توصيل لكل الكويت<small>اطلب واتساب ونوصلها لموقعك</small></span>
         </a>
-      </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=%D8%A7%D9%84%D8%B4%D9%88%D9%8A%D8%AE+%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s7-6.3 7-12a7 7 0 1 0-14 0c0 5.7 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <span>المحل: الشويخ، الكويت<small>افتح الخريطة</small></span>
+        </a>
+      </section>
     </div>
-  </section>
+  </div>
 </main>
 
 <footer>
-  <img src="logo-sm.png" alt="">
-  الدكتور، قطع غيار الحفارات واللودرات — الشويخ، الكويت
+  <div class="wrap">
+    <img src="logo-sm.png" alt="">
+    <div>الدكتور — قطع غيار الحفارات واللودرات، الشويخ، الكويت</div>
+    <div><a href="https://www.tiktok.com/@hydraulicpumpdoctor">تيك توك</a> · <a href="https://www.instagram.com/excavator.q8">إنستغرام</a></div>
+  </div>
 </footer>
 
 <div class="dock">
-  <div class="who">الدكتور<small>توصيل لكل الكويت • مع الضمان</small></div>
   <a class="btn" href="https://wa.me/96565888222">اطلب واتساب</a>
 </div>
 
-
 <script>
 {
-  // ===== أضف قطعة جديدة هني: سطر واحد لكل قطعة =====
-  const PARTS = [
-    { name: "طرمبة بايلوت", img: "parts/pilot-pump.jpg", note: "طرمبة البايلوت للحفارات. قول لنا موديل حفارتك ونأكد لك المقاس.", warranty: "مع الضمان" },
+  // ===== التصنيفات =====
+  const CATS = [
+    { id: "all",   name: "كل القطع" },
+    { id: "main",  name: "مضخات هيدروليك رئيسية" },
+    { id: "pilot", name: "طرمبات بايلوت" },
+    { id: "inner", name: "قطع داخلية للمضخات" },
+    { id: "ecu",   name: "كمبيوترات حفارات" },
+    { id: "wire",  name: "وايرات (ظفاير)" },
   ];
-  // =================================================
-  const wa = (n) => "https://wa.me/96565888222?text=" + encodeURIComponent("هلا دكتور، أبي " + n);
-  const grid = document.getElementById("catGrid");
-  grid.innerHTML = PARTS.map(p => `
-    <article class="item">
-      <img src="${p.img}" alt="${p.name}" loading="lazy" width="1000" height="1000">
-      <div class="body">
-        <h3>${p.name}</h3>
-        <p>${p.note}</p>
-        <div class="meta">${p.warranty ? `<span class="chip">${p.warranty}</span>` : ""}<span class="chip">توصيل لكل الكويت</span></div>
-        <a class="btn" href="${wa(p.name)}">اطلبها واتساب</a>
-      </div>
-    </article>`).join("");
+  // ===== القطع: سطر واحد لكل قطعة =====
+  const PARTS = [
+    { name: "طرمبة بايلوت", cat: "pilot", img: "parts/pilot-pump.jpg", note: "قول لنا موديل حفارتك ونأكد لك المقاس.", warranty: "مع الضمان" },
+  ];
+  // ===== الماركات =====
+  const BRANDS = [
+    ["CAT","كاتربلر"],["KOMATSU","كوماتسو"],["HITACHI","هيتاشي"],["KOBELCO","كوبيلكو"],
+    ["DOOSAN","دوسان"],["HYUNDAI","هيونداي"],["VOLVO","فولفو"],["JCB","جي سي بي"],
+  ];
+
+  const wa = (t) => "https://wa.me/96565888222?text=" + encodeURIComponent("هلا دكتور، " + t);
+  let cur = "all", q = "";
+  const catsEl = document.getElementById("cats"), grid = document.getElementById("grid"), count = document.getElementById("count");
+
+  const countIn = (id) => id === "all" ? PARTS.length : PARTS.filter(p => p.cat === id).length;
+  function drawCats(){
+    catsEl.innerHTML = CATS.map(c => `<li><button type="button" data-c="${c.id}" aria-pressed="${c.id===cur}">${c.name}<span>${countIn(c.id)}</span></button></li>`).join("");
+  }
+  function drawGrid(){
+    const cName = CATS.find(c => c.id === cur).name;
+    const list = PARTS.filter(p => (cur==="all" || p.cat===cur) && (!q || p.name.includes(q) || p.note.includes(q)));
+    count.textContent = list.length ? `${list.length} قطعة` : "";
+    const ask = `<div class="ask"><h3>${q ? "ما لقينا “"+q+"” بالكتالوج" : (cur==="all" ? "قطعتك مو موجودة هني؟" : cName + ": اسألنا عنها")}</h3>
+      <p>عندنا قطع أكثر من اللي بالموقع. ارسل صورة القطعة أو رقمها وموديل حفارتك.</p>
+      <a class="btn" href="${wa("أبي " + (q || (cur==="all" ? "قطعة" : cName)))}">اسأل على الواتساب</a></div>`;
+    grid.innerHTML = list.map(p => `
+      <article class="item">
+        <img src="${p.img}" alt="${p.name}" loading="lazy" width="1000" height="1000">
+        <div class="b">
+          <h3>${p.name}</h3>
+          <p>${p.note}</p>
+          ${p.warranty ? `<div class="w">${p.warranty}</div>` : ""}
+          <a class="btn" href="${wa("أبي " + p.name)}">اطلبها واتساب</a>
+        </div>
+      </article>`).join("") + ask;
+  }
+  catsEl.addEventListener("click", e => {
+    const b = e.target.closest("button"); if(!b) return;
+    cur = b.dataset.c; drawCats(); drawGrid();
+    document.getElementById("products").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block:"start"});
+  });
+  document.getElementById("q").addEventListener("input", e => { q = e.target.value.trim(); drawGrid(); });
+  document.getElementById("bgrid").innerHTML = BRANDS.map(([en, ar]) =>
+    `<a href="${wa("أبي قطعة لحفارة " + ar)}"><b>${en}</b><small>${ar}</small></a>`).join("");
+  drawCats(); drawGrid();
 }
 </script>
 </body>
