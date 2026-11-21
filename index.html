@@ -132,6 +132,7 @@ dialog.pd::backdrop{background:rgba(10,12,14,.7)}
 .sec-hero{width:100%;height:auto;max-height:520px;object-fit:cover;object-position:center 60%;border-radius:12px;margin-bottom:26px;background:#fff}
 .info{display:block;margin-top:20px;max-width:860px;border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:#fff}
 .info img{width:100%;height:auto;display:block}
+.info.sq{max-width:520px}
 /* brands */
 .brands{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));border-top:1px solid var(--rule);border-inline-start:1px solid var(--rule);margin-top:28px}
 .brands a{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:104px;text-decoration:none;border-bottom:1px solid var(--rule);border-inline-end:1px solid var(--rule);background:#fff;transition:background .2s}
@@ -314,8 +315,8 @@ footer a{color:#C8CED5;text-decoration:none;font-weight:800}
     hammer:'<path d="M9 3h6v8H9zM12 11v7M10 18h4l-2 3z"/>'
   };
   const SECTIONS = [
-    { id:"hyd", title:"نظام الهيدروليك", desc:"قطع غيار الطرمبة: الرئيسية، الدوران، التبريد والبايلوت", w:W.std, icon:"pump",
-      groups:[{ items:[["الطرمبة الرئيسية"],["مضخة الدوران"],["مضخة التبريد"],["مضخة البايلوت","parts/pilot-pump.jpg"]] }] },
+    { id:"hyd", title:"نظام الهيدروليك", desc:"قطع غيار الطرمبة: الرئيسية، الدوران، التبريد والبايلوت", w:W.std, icon:"pump", info:"parts/main-pump-parts.jpg", infoW:1263, infoH:1264,
+      groups:[{ items:[["الطرمبة الرئيسية","parts/main-pump-parts-sm.jpg"],["مضخة الدوران"],["مضخة التبريد"],["مضخة البايلوت","parts/pilot-pump.jpg"]] }] },
     { id:"har", title:"الهارنيس (الظفاير)", desc:"ظفاير البخاخات، الكمبيوتر، الشاصي، الكبينة ويدة التحكم", w:W.har, icon:"wire",
       groups:[{ items:[["ظفيرة البخاخات"],["ظفيرة الكمبيوتر"],["ظفيرة الشاصي"],["ظفيرة أسفل الكبينة"],["ظفيرة يدة التحكم"]] }] },
     { id:"ecu", title:"الكمبيوترات", desc:"كمبيوتر المكينة، الجير والحركات", w:W.ecu, icon:"chip", info:"parts/ecu-system.jpg",
@@ -349,7 +350,7 @@ footer a{color:#C8CED5;text-decoration:none;font-weight:800}
     <div class="part-sec" id="sec-${s.id}">
       ${s.hero ? `<img class="sec-hero" src="${s.hero}" alt="" loading="lazy">` : ""}
       <div class="ps-head"><h3>${s.title}</h3>${s.w ? `<span class="w">${s.w}</span>` : ""}</div>
-      ${s.info ? `<a class="info" href="${s.info}" target="_blank" rel="noopener"><img src="${s.info}" alt="" width="2048" height="1152" loading="lazy"></a>` : ""}
+      ${s.info ? `<a class="info${s.infoW && s.infoW<1.3*s.infoH ? " sq" : ""}" href="${s.info}" target="_blank" rel="noopener"><img src="${s.info}" alt="" width="${s.infoW||2048}" height="${s.infoH||1152}" loading="lazy"></a>` : ""}
       ${(s.chips||[]).map(c => `<div class="label">${c.label}</div><div class="chips">${c.list.map(([en,ar]) =>
         `<a href="${wa((s.id==="jh"?"قطعة جاك همر ":"قطعة لودر ") + (ar||en))}"><b>${en}</b>${ar?`<small>${ar}</small>`:""}</a>`).join("")}</div>`).join("")}
       ${s.groups.map(g => `${g.en ? `<div class="brandhead"><b>${g.en}</b><span>${g.name}</span></div>` : (g.name ? `<div class="label">${g.name}</div>` : "")}
