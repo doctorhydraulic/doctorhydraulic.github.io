@@ -17,3 +17,7 @@
 /* No prices on the site: hide currency picker and price line (27 Nov 2026) */
 .top-tools select, .pp-price { display: none !important; }
 .pp-media .pp-extra { display: block; border-top: 1px solid var(--rule); }
+/* Part pages: no floating WhatsApp bar (27 Nov 2026) */
+body.on-part .dock { display: none !important; }
+footer .foot { flex-wrap: wrap; gap: 8px 16px; }
+footer .foot-extra a { white-space: nowrap; }

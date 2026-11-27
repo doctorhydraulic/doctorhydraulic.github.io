@@ -4,11 +4,56 @@
   var MOBILE = window.matchMedia("(max-width: 859px)");
 
   function label(n) {
-    return document.documentElement.lang === "en" ? n + " parts" : n + " قطعة";
+    if (document.documentElement.lang === "en") return n + (n === 1 ? " part" : " parts");
+    if (n === 1) return "قطعة وحدة";
+    if (n === 2) return "قطعتين";
+    if (n >= 3 && n <= 10) return n + " قطع";
+    return n + " قطعة";
+  }
+  function isEn() { return document.documentElement.lang === "en"; }
+
+  // Experience item in the trust strip (added 27 Nov 2026).
+  function trustExp() {
+    var w = document.querySelector(".trust .wrap");
+    if (!w) return;
+    var key = isEn() ? "en" : "ar";
+    var old = w.querySelector(".t-exp");
+    if (old && old.dataset.lang === key) return;
+    if (old) old.remove();
+    var d = document.createElement("div");
+    d.className = "t-exp"; d.dataset.lang = key;
+    d.innerHTML = '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 14.2-1.5 7.3 5-2.8 5 2.8-1.5-7.3"></path></svg>' +
+      (key === "en" ? "<span><b>10+ years experience</b><small>In heavy-equipment parts</small></span>"
+                    : "<span><b>خبرة أكثر من ١٠ سنين</b><small>بقطع المعدات الثقيلة</small></span>");
+    w.insertBefore(d, w.firstChild);
+  }
+
+  // Fuller footer: WhatsApp number + map (added 27 Nov 2026).
+  function footer() {
+    var f = document.querySelector("footer .foot");
+    if (!f) return;
+    var key = isEn() ? "en" : "ar";
+    var old = f.querySelector(".foot-extra");
+    if (old && old.dataset.lang === key) return;
+    if (old) old.remove();
+    var s = document.createElement("span");
+    s.className = "foot-extra"; s.dataset.lang = key;
+    s.innerHTML = '<a href="https://wa.me/96565888222" target="_blank" rel="noopener" dir="ltr">WhatsApp +965 6588 8222</a> · ' +
+      '<a href="https://maps.app.goo.gl/Z3EMKijjHS32cFyWA" target="_blank" rel="noopener">' + (key === "en" ? "Shop location" : "موقع المحل") + "</a>";
+    f.appendChild(s);
+  }
+
+  // On part pages hide the floating WhatsApp bar (the page has its own button).
+  function partPage() {
+    document.body.classList.toggle("on-part", !!document.querySelector(".pp-grid"));
   }
 
   function setup(sec) {
-    if (sec.dataset.acc) return;
+    if (sec.dataset.acc) {
+      var c = sec.querySelector(".acc-count"), t = label(sec.querySelectorAll("a.item").length);
+      if (c && c.textContent !== t) c.textContent = t;
+      return;
+    }
     var head = sec.querySelector(":scope > .ps-head");
     if (!head) return;
     sec.dataset.acc = "1";
@@ -78,6 +123,7 @@
 
   function scan() {
     extraPhotos();
+    partPage(); trustExp(); footer();
     document.querySelectorAll(".part-sec").forEach(setup);
   }
   new MutationObserver(scan).observe(document.documentElement, { childList: true, subtree: true });
