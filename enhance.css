@@ -1,0 +1,16 @@
+/* Mobile accordion for part sections (added 27 Nov 2026) */
+.part-sec.acc > .ps-head { cursor: pointer; align-items: center; user-select: none; }
+.part-sec.acc .acc-count { color: var(--steel); font-size: 14px; font-weight: 800; margin-inline-start: auto; }
+.part-sec.acc .acc-chev { font-size: 26px; line-height: 1; color: #e4511b; transition: transform .2s; transform: rotate(180deg); }
+.part-sec.acc.closed .acc-chev { transform: none; }
+.part-sec.acc.closed > :not(.ps-head) { display: none; }
+@media (max-width: 859px) {
+  .part-sec.acc { margin-top: 0; padding-top: 18px; padding-bottom: 18px; }
+  .part-sec.acc > .ps-head h3 { font-size: 22px; }
+  .part-sec.acc > .ps-head { gap: 6px 10px; flex-wrap: wrap; }
+  .part-sec.acc > .ps-head h3 { flex: 1 1 100%; }
+  .part-sec.acc { scroll-margin-top: 118px; }
+}
+@media (min-width: 860px) {
+  .part-sec.acc .acc-count { display: none; }
+}
