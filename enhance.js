@@ -105,7 +105,7 @@
     "cab-harness-325d": ["parts/cab-harness-2.jpg"],
     "cab-harness-330d": ["parts/cab-harness-2.jpg"],
     "cab-harness-336d": ["parts/cab-harness-2.jpg"],
-    "injector-harness-c9": ["parts/injector-harness-c9-2.jpg"],
+    "injector-harness-c9": ["parts/injector-harness-c9-2b.jpg", "parts/injector-harness-c9-3.jpg"],
     "loader-joystick-950h": ["parts/loader-joystick-2.jpg", "parts/loader-joystick-3.jpg", "parts/loader-joystick-4.jpg"]
   };
   function extraPhotos() {
