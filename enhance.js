@@ -104,7 +104,8 @@
   var EXTRA = {
     "cab-harness-325d": ["parts/cab-harness-2.jpg"],
     "cab-harness-330d": ["parts/cab-harness-2.jpg"],
-    "cab-harness-336d": ["parts/cab-harness-2.jpg"]
+    "cab-harness-336d": ["parts/cab-harness-2.jpg"],
+    "loader-joystick-950h": ["parts/loader-joystick-2.jpg", "parts/loader-joystick-3.jpg", "parts/loader-joystick-4.jpg"]
   };
   function extraPhotos() {
     var m = location.hash.match(/^#\/part\/([^?]+)/);
