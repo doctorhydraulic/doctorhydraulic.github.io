@@ -16,3 +16,4 @@
 }
 /* No prices on the site: hide currency picker and price line (27 Nov 2026) */
 .top-tools select, .pp-price { display: none !important; }
+.pp-media .pp-extra { display: block; border-top: 1px solid var(--rule); }

@@ -55,7 +55,29 @@
     if (a) openSection(a.getAttribute("href").slice(1));
   }, true);
 
+  // Extra photos on part pages (the store shows one photo per part).
+  var EXTRA = {
+    "cab-harness-325d": ["parts/cab-harness-2.jpg"],
+    "cab-harness-330d": ["parts/cab-harness-2.jpg"],
+    "cab-harness-336d": ["parts/cab-harness-2.jpg"]
+  };
+  function extraPhotos() {
+    var m = location.hash.match(/^#\/part\/([^?]+)/);
+    var media = document.querySelector(".pp-media");
+    if (!media) return;
+    var id = m ? m[1] : "";
+    if (media.dataset.extraFor === id) return;
+    media.dataset.extraFor = id;
+    media.querySelectorAll(".pp-extra").forEach(function (e) { e.remove(); });
+    (EXTRA[id] || []).forEach(function (src) {
+      var img = document.createElement("img");
+      img.className = "pp-extra"; img.src = src; img.alt = ""; img.loading = "lazy";
+      media.appendChild(img);
+    });
+  }
+
   function scan() {
+    extraPhotos();
     document.querySelectorAll(".part-sec").forEach(setup);
   }
   new MutationObserver(scan).observe(document.documentElement, { childList: true, subtree: true });
