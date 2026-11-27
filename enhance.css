@@ -14,3 +14,5 @@
 @media (min-width: 860px) {
   .part-sec.acc .acc-count { display: none; }
 }
+/* No prices on the site: hide currency picker and price line (27 Nov 2026) */
+.top-tools select, .pp-price { display: none !important; }
